@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: hello-service-internal
+spec:
+  hosts:
+  - hello-service
+  http:
+  - match:
+    - uri:
+        exact: /hello
+    route:
+    - destination:
+        host: hello-service
+        subset: v2
