@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
    @RequestMapping("/hello")
    public String sayHello() {
-      return "Hello from Service Version 2.22222222222222222222222222222222";
+      return "Hello from Service Version 2.22222222";
    }
 }
