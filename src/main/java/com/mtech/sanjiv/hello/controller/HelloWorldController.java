@@ -22,7 +22,16 @@ public class HelloWorldController {
        return "Hello from Service Version 2.22222222 : "+name;
    }
 
-   @PostMapping("msg")
+    @Value("${spring.datasource.username}")
+    private String dbUser;
+
+    @RequestMapping("/hellodb")
+    public String sayHelloDb() {
+        return "Hello from DB User : "+dbUser;
+    }
+
+
+    @PostMapping("msg")
    public String message(@Valid @RequestBody String msgValue) {
       return "{'masg': 'hello world'}";
    }
